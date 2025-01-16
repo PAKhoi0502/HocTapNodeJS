@@ -1,0 +1,107 @@
+/* Reset CSS */
+body, html, form, input, button, a, p, label {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #1e1e2f;
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+/* Page Title */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #f0f0f0;
+}
+
+/* Form Styling */
+form {
+    background-color: #2a2a40;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    font-size: 0.9rem;
+    color: #a9a9b8;
+    margin-bottom: 0.5rem;
+}
+
+form input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #3e3e57;
+    border-radius: 5px;
+    background-color: #1e1e2f;
+    color: #f0f0f0;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus {
+    border-color: #0078d7;
+    box-shadow: 0 0 5px #0078d7;
+    outline: none;
+}
+
+form button {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #0078d7;
+    color: #f0f0f0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #005bb5;
+}
+
+/* Back Link */
+a {
+    display: block;
+    margin-top: 1.5rem;
+    text-align: center;
+    color: #0078d7;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Message Styling */
+p {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+p[style*="color: red;"] {
+    color: #ff5c5c;
+}
+
+p[style*="color: green;"] {
+    color: #5cff5c;
+}

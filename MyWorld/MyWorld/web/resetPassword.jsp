@@ -4,6 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="CSS/resetPassCSS.css" rel="stylesheet" type="text/css"/>
         <title>Reset Password</title>
     </head>
     <body>
@@ -16,14 +17,14 @@
             <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
 
             <button type="submit">Đặt lại mật khẩu</button>
-        </form>
-        <%
+            <%
 String message = (String) request.getAttribute("message");
 if (message != null) {
-        %>
-        <p style="color: red;"><%= message %></p>
-        <%
-            }
-        %>
+            %>
+            <p style="color: red;"><%= message %></p>
+            <%
+                }
+            %>
+        </form>
     </body>
 </html>
