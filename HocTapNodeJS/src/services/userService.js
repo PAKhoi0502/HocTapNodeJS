@@ -19,27 +19,28 @@ let handleUserLogin = (email, password) => { // check email pass trong db
 
                 if (user) { // nếu user tồn tại
 
-                    // let check = await bcrypt.compareSync(password, user.password);
-                    let check = true;
+                    let check = await bcrypt.compareSync(password, user.password);
                     if (check) {
                         userData.errCode = 0,
-                            userData.errMessage = 'Done';
+                            userData.errMessage = 'OK';
+
                         delete user.password;
                         userData.user = user;
                     } else {
                         userData.errCode = 3,
                             userData.errMessage = 'Wrong Password';
                     }
+
+                } else {
+                    userData.errCode = 2;
+                    userData.errMessage = `User's not found~`
                 }
 
-                else {
-                    userData.errCode = 2;
-                    userData.errMessage = "User's Email isn't exist in your system. Pls try other email"
-                }
             } else {
                 userData.errCode = 1;
-                userData.errMessage = "Your's Email isn't exist in your system. Pls try other email!";
+                userData.errMessage = `Your's Email isn't exist in your system. Pls try other email!`;
             }
+
             resolve(userData);
 
         } catch (e) {

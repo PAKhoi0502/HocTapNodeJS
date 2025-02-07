@@ -1,6 +1,7 @@
-import userSevices from "../services/userService";
+import userServices from "../services/userService";
 
 let handleLogin = async (req, res) => {
+    console.log("Login API called. Request body:", req.body); // In dữ liệu từ fronten
     let email = req.body.email;
     let password = req.body.password;
 
@@ -8,17 +9,16 @@ let handleLogin = async (req, res) => {
         return res.status(500).json({
             errCode: 1,
             message: 'Missing inputs parameter!',
-            user: userData ? userData.user : {}
         });
     }
 
-    let userData = await userSevices.handleUserLogin(email, password);
-
+    let userData = await userServices.handleUserLogin(email, password);
+    console.log(userData);
 
     return res.status(200).json({
         errCode: userData.errCode,
         message: userData.errMessage,
-        userData
+        user: userData.user ? userData.user : {}
     });
 }
 
