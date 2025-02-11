@@ -67,6 +67,6 @@ let checkUserMail = (userEmail) => {
     });
 }
 
-module.exports = {
+export default {
     handleUserLogin: handleUserLogin,
-}
+};
